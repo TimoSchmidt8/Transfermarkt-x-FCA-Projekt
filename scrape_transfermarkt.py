@@ -44,30 +44,25 @@ def get_soup(url):
     response.raise_for_status()
     return BeautifulSoup(response.text, "lxml")
 
-def fetch_current_market_value(player_id):
-    """Holt nur den aktuellsten Marktwert aus der API und konvertiert das Datum für MySQL."""
+def fetch_all_market_values(player_id):
+    """Holt die gesamte Marktwert-Historie."""
     url = f"{BASE_URL}/ceapi/marketValueDevelopment/graph/{player_id}"
     try:
         response = http_session.get(url, headers=HEADERS, timeout=10)
         if response.status_code == 200:
             entries = response.json().get("list", [])
-            if entries:
-                last_entry = entries[-1] # Der letzte/aktuellste Eintrag
-                raw_date = last_entry.get("datum_mw")
-                
-                # Konvertiere '27.05.2026' zu '2026-05-27'
+            history = []
+            for entry in entries:
+                raw_date = entry.get("datum_mw")
                 if raw_date and "." in raw_date:
                     parts = raw_date.split(".")
                     if len(parts) == 3:
-                        raw_date = f"{parts[2]}-{parts[1]}-{parts[0]}"
-                        
-                return {
-                    "value": last_entry.get("y"),
-                    "date": raw_date
-                }
+                        formatted_date = f"{parts[2]}-{parts[1]}-{parts[0]}"
+                        history.append({"value": entry.get("y"), "date": formatted_date})
+            return history
     except Exception:
         pass
-    return {"value": None, "date": None}
+    return []
 
 def get_bundesliga_clubs():
     """Schritt 1: Sammelt die 18 aktuellen Bundesliga-Vereine."""
@@ -116,11 +111,9 @@ def get_players_from_club(club_url):
     return list(player_ids)
 
 def scrape_player_details(player_id, club_name):
-    """Schritt 3: Holt die exakten Matching-Daten vom Spielerprofil."""
     profile_url = f"{BASE_URL}/-/profil/spieler/{player_id}"
     profile_soup = get_soup(profile_url)
 
-    # Name und Trikotnummer
     name_tag = profile_soup.find("h1")
     raw_name = name_tag.get_text(" ", strip=True) if name_tag else f"Unknown {player_id}"
 
@@ -131,7 +124,6 @@ def scrape_player_details(player_id, club_name):
 
     full_name_tm = re.sub(r"^#\d+\s+", "", raw_name).strip()
 
-    # Geburtsdatum (Der robuste SEO-Trick)
     date_of_birth = None
     dob_tag = profile_soup.find(attrs={"itemprop": "birthDate"})
     if dob_tag:
@@ -140,13 +132,7 @@ def scrape_player_details(player_id, club_name):
         if len(parts) == 3:
             date_of_birth = f"{parts[2]}-{parts[1]}-{parts[0]}"
             
-    if not date_of_birth:
-        match = re.search(r'"birthDate"\s*:\s*"(\d{4}-\d{2}-\d{2})"', profile_soup.text)
-        if match:
-            date_of_birth = match.group(1)
-
-    # Aktueller Marktwert
-    mv_data = fetch_current_market_value(player_id)
+    history = fetch_all_market_values(player_id)
 
     return {
         "tm_id": player_id,
@@ -154,16 +140,13 @@ def scrape_player_details(player_id, club_name):
         "shirt_number": shirt_number,
         "full_name_tm": full_name_tm,
         "date_of_birth": date_of_birth,
-        "market_value_eur": mv_data["value"],
-        "last_updated": mv_data["date"]
+        "history": history
     }
 
 def save_to_db(data):
-    """Schritt 4: Speichert die Daten sicher in die neuen Tabellen."""
     conn = get_connection()
     cursor = conn.cursor()
 
-    # 1. Spieler in bl_players
     cursor.execute("""
         INSERT INTO bl_players (tm_id, club_name, shirt_number, full_name_tm, date_of_birth)
         VALUES (%s, %s, %s, %s, %s)
@@ -172,22 +155,13 @@ def save_to_db(data):
             shirt_number = VALUES(shirt_number),
             full_name_tm = VALUES(full_name_tm),
             date_of_birth = VALUES(date_of_birth)
-    """, (
-        data["tm_id"], data["club_name"], data["shirt_number"], 
-        data["full_name_tm"], data["date_of_birth"]
-    ))
+    """, (data["tm_id"], data["club_name"], data["shirt_number"], data["full_name_tm"], data["date_of_birth"]))
 
-    # 2. Marktwert in bl_market_values
-    if data["market_value_eur"]:
+    for entry in data["history"]:
         cursor.execute("""
-            INSERT INTO bl_market_values (tm_id, season, market_value_eur, last_updated)
+            INSERT IGNORE INTO bl_market_values (tm_id, season, market_value_eur, last_updated)
             VALUES (%s, %s, %s, %s)
-            ON DUPLICATE KEY UPDATE 
-                market_value_eur = VALUES(market_value_eur),
-                last_updated = VALUES(last_updated)
-        """, (
-            data["tm_id"], CURRENT_SEASON, data["market_value_eur"], data["last_updated"]
-        ))
+        """, (data["tm_id"], CURRENT_SEASON, entry["value"], entry["date"]))
 
     conn.commit()
     cursor.close()
@@ -205,14 +179,12 @@ def main():
                 data = scrape_player_details(p_id, club['name'])
                 save_to_db(data)
                 
-                mv_str = f"€{data['market_value_eur']}" if data['market_value_eur'] else "Kein MW"
-                print(f"  [{idx}/{len(player_ids)}] Gespeichert: {data['full_name_tm']} (#{data['shirt_number']}) | {mv_str}")
+                print(f"  [{idx}/{len(player_ids)}] {data['full_name_tm']} | {len(data['history'])} Einträge gespeichert")
                 
-                time.sleep(2.5) # Respektvolle Pause für Transfermarkt
-                
+                time.sleep(6)
             except Exception as e:
                 print(f"  Fehler bei Spieler {p_id}: {e}")
-                time.sleep(5)
+                time.sleep(30)
 
 if __name__ == "__main__":
     main()

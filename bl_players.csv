@@ -1,0 +1,586 @@
+tm_id,dfl_id,club_name,shirt_number,full_name_tm,date_of_birth
+7161,NULL,"Bayer 04 Leverkusen",7,"Jonas Hofmann",1992-07-14
+17259,NULL,"FC Bayern München",1,"Manuel Neuer",1986-03-27
+21327,NULL,"1.FC Köln",20,"Ron-Robert Zieler",1989-02-12
+28396,NULL,"FC Schalke 04",10,"Edin Dzeko",1986-03-17
+31653,NULL,"Borussia Mönchengladbach",21,"Tobias Sippel",1988-03-22
+40034,NULL,"Eintracht Frankfurt",33,"Jens Grahl",1988-09-22
+40680,NULL,"FC Bayern München",26,"Sven Ulreich",1988-08-03
+43824,NULL,"FC Schalke 04",22,"Kevin Müller",1991-03-15
+44536,NULL,"SV 07 Elversberg",1,"Frank Lehmann",1989-04-29
+46580,NULL,"TSG 1899 Hoffenheim",27,"Andrej Kramaric",1991-06-19
+49723,NULL,"Eintracht Frankfurt",22,"Timothy Chandler",1990-03-29
+55089,NULL,"TSG 1899 Hoffenheim",1,"Oliver Baumann",1990-06-02
+57071,NULL,"RB Leipzig",1,"Péter Gulácsi",1990-05-06
+58995,NULL,"SC Freiburg",5,"Anthony Jung",1991-11-03
+74842,NULL,"Eintracht Frankfurt",27,"Mario Götze",1992-06-03
+75921,NULL,"1.FC Union Berlin",28,"Christopher Trimmel",1987-02-24
+76158,NULL,"Borussia Dortmund",33,"Alexander Meyer",1991-04-13
+81173,NULL,"Bayer 04 Leverkusen",28,"Janis Blaswich",1991-05-02
+82350,NULL,"1.FSV Mainz 05",16,"Stefan Bell",1991-08-24
+84993,NULL,"Hamburger SV",1,"Daniel Heuer Fernandes",1992-11-13
+85534,NULL,"SV 07 Elversberg",28,"Tim Boss",1993-06-28
+85543,NULL,"Bayer 04 Leverkusen",36,"Niklas Lomb",1993-07-28
+85864,NULL,"FC Schalke 04",1,"Loris Karius",1993-06-22
+85906,NULL,"1.FSV Mainz 05",21,"Danny da Costa",1993-07-13
+90317,NULL,"Borussia Mönchengladbach",NULL,"Daniel Batz",1991-01-12
+93604,NULL,"SC Freiburg",17,"Lukas Kübler",1992-08-30
+93707,NULL,"SC Freiburg",30,"Christian Günter",1993-02-28
+93740,NULL,"RB Leipzig",4,"Willi Orbán",1992-11-03
+94192,NULL,"Borussia Dortmund",30,"Patrick Drewes",1993-02-04
+99451,NULL,"SV Werder Bremen",25,"Markus Kolke",1990-08-18
+106405,NULL,"FC Augsburg",6,"Jeffrey Gouweleeuw",1991-07-10
+106872,NULL,"Borussia Mönchengladbach",7,"Kevin Stöger",1993-08-27
+106987,NULL,"Borussia Dortmund",20,"Marcel Sabitzer",1994-03-17
+107775,NULL,"1.FC Union Berlin",1,"Frederik Rönnow",1992-08-04
+116088,NULL,"1.FC Köln",30,"Marius Bülter",1993-03-29
+118847,NULL,"1.FSV Mainz 05",31,"Dominik Kohr",1994-01-31
+119211,NULL,"SV Werder Bremen",8,"Mitchell Weiser",1994-04-21
+119296,NULL,"Borussia Dortmund",23,"Emre Can",1994-01-12
+119557,NULL,"FC Schalke 04",19,"Kenan Karaman",1994-03-05
+120205,NULL,"FC Augsburg",38,"Michael Gregoritsch",1994-04-18
+124410,NULL,"1.FC Union Berlin",8,"Rani Khedira",1994-01-27
+124502,NULL,"SC Freiburg",28,"Matthias Ginter",1994-01-19
+125714,NULL,"Bayer 04 Leverkusen",1,"Mark Flekken",1993-06-13
+127573,NULL,"1.FSV Mainz 05",2,"Phillipp Mwene",1994-01-29
+132098,NULL,"FC Bayern München",9,"Harry Kane",1993-07-28
+148657,NULL,"FC Schalke 04",26,"Tomas Kalas",1993-05-15
+156990,NULL,"SV Werder Bremen",32,"Marco Friedl",1998-03-16
+157635,NULL,"Hamburger SV",15,"Yussuf Poulsen",1994-06-15
+157672,NULL,"TSG 1899 Hoffenheim",34,"Vladimír Coufal",1992-08-22
+159088,NULL,"Bayer 04 Leverkusen",8,"Robert Andrich",1994-09-22
+159471,NULL,"FC Bayern München",7,"Serge Gnabry",1995-07-14
+160929,NULL,"1.FC Köln",1,"Marvin Schwäbe",1995-04-25
+160954,NULL,"SC Freiburg",24,"Jannik Huth",1994-04-15
+160963,NULL,"1.FSV Mainz 05",27,"Robin Zentner",1994-10-28
+160971,NULL,"RB Leipzig",25,"Leopold Zingerle",1994-04-10
+161056,NULL,"FC Bayern München",6,"Joshua Kimmich",1995-02-08
+161057,NULL,"1.FC Union Berlin",25,"Carl Klaus",1994-01-16
+162434,NULL,"SV Werder Bremen",4,"Niklas Stark",1995-04-14
+168989,NULL,"1.FSV Mainz 05",30,"Silvan Widmer",1993-03-05
+170517,NULL,"VfB Stuttgart",NULL,"Marius Funk",1996-01-01
+177779,NULL,"1.FC Union Berlin",19,"Janik Haberer",1994-04-02
+179184,NULL,"Eintracht Frankfurt",30,"Michy Batshuayi",1993-10-02
+185077,NULL,"SC Freiburg",32,"Vincenzo Grifo",1993-04-07
+186988,NULL,"SC Paderborn 07",11,"Sven Michel",1990-07-15
+187624,NULL,"VfB Stuttgart",1,"Fabian Bredlow",1995-03-02
+188888,NULL,"1.FSV Mainz 05",23,"Sheraldo Becker",1995-02-09
+190284,NULL,"SC Freiburg",8,"Maximilian Eggestein",1996-12-08
+192635,NULL,"Borussia Mönchengladbach",30,"Nico Elvedi",1996-09-30
+192840,NULL,"SV 07 Elversberg",30,"Jan Gyamerah",1995-06-18
+193004,NULL,"Borussia Dortmund",3,"Waldemar Anton",1996-07-20
+193033,NULL,"Borussia Mönchengladbach",11,"Tim Kleindienst",1995-08-31
+193611,NULL,"SV 07 Elversberg",NULL,"Patryk Dragon",1996-04-11
+193900,NULL,"FC Augsburg",27,"Marius Wolf",1995-05-27
+195778,NULL,"FC Bayern München",NULL,"Alexander Nübel",1996-09-30
+196095,NULL,"1.FC Köln",7,"Luca Waldschmidt",1996-05-19
+196231,NULL,"1.FC Union Berlin",NULL,"Marvin Friedrich",1995-12-13
+196357,NULL,"FC Bayern München",4,"Jonathan Tah",1996-02-11
+196813,NULL,"Eintracht Frankfurt",23,"Michael Zetterer",1995-07-12
+202591,NULL,"RB Leipzig",39,"Benjamin Henrichs",1997-02-23
+203123,NULL,"TSG 1899 Hoffenheim",26,"Haris Tabakovic",1994-06-20
+207580,NULL,"SV 07 Elversberg",6,"Amara Condé",1997-01-06
+208167,NULL,"SV Werder Bremen",NULL,"Dawid Kownacki",1997-03-14
+215599,NULL,"RB Leipzig",16,"Lukas Klostermann",1996-06-03
+221316,NULL,"Bayer 04 Leverkusen",21,"Lucas Vázquez",1991-07-01
+223967,NULL,"FC Bayern München",27,"Konrad Laimer",1997-05-27
+225657,NULL,"SC Freiburg",3,"Philipp Lienhart",1996-07-11
+227089,NULL,"1.FC Köln",44,"Matthias Köbbing",1997-05-28
+227110,NULL,"Hamburger SV",23,"Jordan Torunarigha",1997-08-07
+229006,NULL,"Borussia Mönchengladbach",9,"Franck Honorat",1996-08-11
+229991,NULL,"SV 07 Elversberg",24,"Luca Schnellbacher",1994-05-06
+232320,NULL,"VfB Stuttgart",16,"Atakan Karazor",1996-10-13
+232454,NULL,"1.FSV Mainz 05",10,"Nadiem Amiri",1996-10-27
+232463,NULL,"SV 07 Elversberg",16,"Luca Pfeiffer",1996-08-20
+234029,NULL,"VfB Stuttgart",NULL,"Grischa Prömel",1995-01-09
+236981,NULL,"1.FC Köln",4,"Timo Hübers",1996-07-20
+238639,NULL,"FC Augsburg",NULL,"Steve Mounié",1994-09-29
+241307,NULL,"FC Schalke 04",27,"Finn Porath",1997-02-23
+242086,NULL,"Bayer 04 Leverkusen",14,"Patrik Schick",1996-01-24
+243856,NULL,"SV Werder Bremen",NULL,"Cedric Itten",1996-12-27
+248999,NULL,"SC Freiburg",9,"Lucas Höler",1994-07-10
+251299,NULL,"FC Augsburg",1,"Finn Dahmen",1998-03-27
+251309,NULL,"TSG 1899 Hoffenheim",NULL,"Dennis Geiger",1998-06-10
+257455,NULL,"FC Bayern München",16,"João Palhinha",1995-07-09
+257814,NULL,"Borussia Dortmund",1,"Gregor Kobel",1997-12-06
+261504,NULL,"Bayer 04 Leverkusen",24,"Aleix García",1997-06-28
+263380,NULL,"TSG 1899 Hoffenheim",41,"Attila Szalai",1998-01-20
+264960,NULL,"FC Augsburg",19,"Robin Fellhauer",1998-01-21
+270393,NULL,"1.FC Union Berlin",24,"Robert Skov",1996-05-20
+270541,NULL,"Borussia Dortmund",9,"Serhou Guirassy",1996-03-12
+272278,NULL,"VfB Stuttgart",10,"Chris Führich",1998-01-09
+278332,NULL,"Borussia Mönchengladbach",10,"Florian Neuhaus",1997-03-16
+279009,NULL,"1.FSV Mainz 05",22,"Marco Richter",1997-11-24
+280553,NULL,"FC Schalke 04",30,"Anton Donkor",1997-11-11
+282163,NULL,"SV 07 Elversberg",23,"Carlo Sickinger",1997-07-29
+282349,NULL,"FC Schalke 04",5,"Timo Becker",1997-03-25
+282660,NULL,"VfB Stuttgart",7,"Maximilian Mittelstädt",1997-03-18
+284010,NULL,"Borussia Mönchengladbach",25,"Robin Hack",1998-08-27
+284270,NULL,"Borussia Mönchengladbach",33,"Moritz Nicolas",1997-10-21
+284732,NULL,"Borussia Dortmund",5,"Ramy Bensebaini",1995-04-16
+284769,NULL,"SC Freiburg",21,"Florian Müller",1997-11-13
+287188,NULL,"FC Schalke 04",21,"Dejan Ljubicic",1997-10-08
+287920,NULL,"1.FC Union Berlin",21,"Tim Skarke",1996-09-07
+288340,NULL,"1.FSV Mainz 05",9,"Phillip Tietz",1997-07-09
+288429,NULL,"FC Augsburg",3,"Mads Pedersen",1996-09-01
+289835,NULL,"SV Werder Bremen",6,"Jens Stage",1996-11-08
+290587,NULL,"Eintracht Frankfurt",15,"Ellyes Skhiri",1995-05-10
+291222,NULL,"Hamburger SV",7,"Jean-Luc Dompé",1995-08-12
+292812,NULL,"FC Schalke 04",4,"Hasan Kuruçay",1997-08-31
+294791,NULL,"1.FC Union Berlin",NULL,"Chris Bedia",1996-03-05
+295630,NULL,"FC Augsburg",13,"Dimitrios Giannoulis",1995-10-17
+296741,NULL,"SC Paderborn 07",1,"Markus Schubert",1998-06-12
+296879,NULL,"SC Paderborn 07",27,"Steffen Tigges",1998-07-31
+297583,NULL,"1.FC Union Berlin",11,"Woo-yeong Jeong",1999-09-20
+298603,NULL,"Hamburger SV",28,"Miro Muheim",1998-03-24
+303219,NULL,"VfB Stuttgart",24,"Jeff Chabot",1998-02-12
+314398,NULL,"1.FSV Mainz 05",7,"Jae-sung Lee",1992-08-10
+318204,NULL,"RB Leipzig",22,"David Raum",1998-04-22
+322073,NULL,"Borussia Mönchengladbach",3,"Isac Lidberg",1998-09-08
+322517,NULL,"1.FC Köln",2,"Joël Schmied",1998-09-23
+324278,NULL,"RB Leipzig",14,"Christoph Baumgartner",1999-08-01
+324811,NULL,"1.FSV Mainz 05",NULL,"Arnaud Nordin",1998-06-17
+327251,NULL,"RB Leipzig",17,"Ridle Baku",1998-04-08
+327862,NULL,"FC Schalke 04",14,"Janik Bachmann",1996-05-06
+328784,NULL,"Eintracht Frankfurt",4,"Robin Koch",1996-07-17
+330635,NULL,"SC Paderborn 07",20,"Felix Götze",1998-02-11
+330699,NULL,"SC Paderborn 07",23,"Raphael Obermair",1996-04-01
+331637,NULL,"SC Paderborn 07",6,"Tom Baack",1999-03-13
+332392,NULL,"FC Schalke 04",6,"Ron Schallenberg",1998-10-06
+333647,NULL,"Eintracht Frankfurt",9,"Jonathan Burkardt",2000-07-11
+334221,NULL,"SV Werder Bremen",5,"Amos Pieper",1998-01-17
+335103,NULL,"1.FC Köln",37,"Linton Maina",1999-06-23
+335209,NULL,"Borussia Mönchengladbach",4,"Kevin Diks",1996-10-06
+335457,NULL,"VfB Stuttgart",9,"Ermedin Demirovic",1998-03-25
+335993,NULL,"SC Freiburg",29,"Philipp Treu",2000-12-03
+337036,NULL,"SC Freiburg",23,"Florent Muslija",1998-07-06
+337097,NULL,"SV 07 Elversberg",29,"Tom Zimmerschied",1998-09-22
+338668,NULL,"SV Werder Bremen",14,"Senne Lynen",1999-02-19
+339314,NULL,"VfB Stuttgart",26,"Deniz Undav",1996-07-19
+340166,NULL,"1.FC Köln",17,"Alessio Castro-Montes",1997-05-17
+340322,NULL,"Bayer 04 Leverkusen",23,"Nathan Tella",1999-07-05
+341317,NULL,"1.FC Union Berlin",7,"Oliver Burke",1997-04-07
+342039,NULL,"FC Augsburg",14,"Yannik Keitel",2000-02-15
+342967,NULL,"SC Freiburg",19,"Niklas Beste",1999-01-04
+344598,NULL,"VfB Stuttgart",23,"Dan-Axel Zagadou",1999-06-03
+344695,NULL,"FC Bayern München",2,"Dayot Upamecano",1998-10-27
+345189,NULL,"1.FC Köln",24,"Luka Lochoshvili",1998-05-29
+346853,NULL,"SV Werder Bremen",20,"Romano Schmid",2000-01-27
+349465,NULL,"SV 07 Elversberg",20,"Nicolas Kristof",1999-12-20
+352332,NULL,"SV 07 Elversberg",3,"Florian Le Joncour",1995-02-03
+353892,NULL,"FC Bayern München",21,"Hiroki Ito",1999-05-12
+357310,NULL,"FC Schalke 04",7,"Christian Gomis",2000-08-09
+358504,NULL,"Eintracht Frankfurt",20,"Ritsu Doan",1998-06-16
+358766,NULL,"FC Augsburg",4,"Calvin Brackelmann",1999-08-22
+361260,NULL,"TSG 1899 Hoffenheim",5,"Ozan Kabak",2000-03-25
+362977,NULL,"1.FC Union Berlin",18,"Josip Juranovic",1995-08-16
+364258,NULL,"TSG 1899 Hoffenheim",13,Bernardo,1995-05-14
+368891,NULL,"Eintracht Frankfurt",3,"Arthur Theate",2000-05-25
+370683,NULL,"1.FSV Mainz 05",25,"Andreas Hanche-Olsen",1997-01-17
+370789,NULL,"Borussia Dortmund",26,"Julian Ryerson",1997-11-17
+371000,NULL,"FC Augsburg",NULL,"David Colina",2000-07-19
+371141,NULL,"1.FC Union Berlin",34,"Stanley Nsoki",1999-04-09
+374954,NULL,"FC Augsburg",17,"Kristijan Jakic",1997-05-14
+378424,NULL,"SC Paderborn 07",26,"Sebastian Klaas",1998-06-30
+381967,NULL,"Hamburger SV",6,"Albert Sambi Lokonga",1999-10-22
+382478,NULL,"FC Augsburg",16,"Cédric Zesiger",1998-06-24
+383362,NULL,"Borussia Mönchengladbach",8,"Enzo Leopold",2000-07-23
+384593,NULL,"FC Augsburg",20,"Alexis Claude-Maurice",1998-06-06
+386685,NULL,"1.FC Union Berlin",31,"Matheo Raab",1998-12-18
+388067,NULL,"VfB Stuttgart",21,"Stefan Drljaca",1999-04-20
+388198,NULL,"Borussia Dortmund",4,"Nico Schlotterbeck",1999-12-01
+388409,NULL,"Borussia Mönchengladbach",16,"Philipp Sander",1998-02-21
+390661,NULL,"SV 07 Elversberg",11,"Jason Ceka",1999-11-10
+391766,NULL,"SV Werder Bremen",17,"Marco Grüll",1998-07-06
+391780,NULL,"1.FC Union Berlin",39,"Derrick Köhn",1999-02-04
+392710,NULL,"1.FSV Mainz 05",15,"Lennard Maloney",1999-10-08
+393512,NULL,"SV Werder Bremen",27,"Felix Agu",1999-09-27
+393745,NULL,"1.FC Köln",NULL,"Jusuf Gazibegovic",2000-03-11
+400489,NULL,"RB Leipzig",NULL,"Eljif Elmas",1999-09-24
+400546,NULL,"VfB Stuttgart",28,"Nikolas Nartey",2000-02-22
+401578,NULL,"Bayer 04 Leverkusen",25,"Exequiel Palacios",1998-10-05
+401639,NULL,"SV 07 Elversberg",25,"Lukas Petkov",2000-11-01
+403177,NULL,"Hamburger SV",29,"Emir Sahiti",1998-11-29
+404950,NULL,"RB Leipzig",13,"Nicolas Seiwald",2001-05-04
+405687,NULL,"1.FC Köln",5,"Tom Krauß",2001-06-22
+406614,NULL,"SC Paderborn 07",NULL,"Oliver Batista Meier",2001-02-16
+406640,NULL,"Borussia Dortmund",8,"Felix Nmecha",2000-10-10
+407098,NULL,"1.FC Köln",16,"Jakub Kaminski",2002-06-05
+410870,NULL,"FC Schalke 04",17,"Adrian Gantenbein",2001-04-18
+412935,NULL,"Hamburger SV",10,"Immanuel Pherai",2001-04-25
+412953,NULL,"TSG 1899 Hoffenheim",18,"Wouter Burger",2001-02-16
+413843,NULL,"FC Augsburg",31,"Keven Schlotterbeck",1997-04-28
+415035,NULL,"TSG 1899 Hoffenheim",28,"Koki Machida",1997-08-25
+415194,NULL,"Hamburger SV",18,"Bakery Jatta",1998-06-06
+416380,NULL,"1.FC Köln",9,"Ragnar Ache",1998-07-28
+420210,NULL,"RB Leipzig",NULL,"Lutsharel Geertruida",2000-07-18
+421323,NULL,"SC Paderborn 07",44,"Timur Gayret",1998-08-08
+422051,NULL,"FC Schalke 04",25,"Nikola Katic",1996-10-10
+424204,NULL,"FC Bayern München",19,"Alphonso Davies",2000-11-02
+429874,NULL,"Eintracht Frankfurt",7,"Ansgar Knauff",2002-01-10
+430034,NULL,"SV 07 Elversberg",2,"Nicholas Mickelson",1999-07-24
+432403,NULL,"SC Freiburg",20,"Rihito Yamamoto",2001-12-12
+432671,NULL,"TSG 1899 Hoffenheim",37,"Luca Philipp",2000-11-28
+434116,NULL,"TSG 1899 Hoffenheim",22,"Alexander Prass",2001-05-26
+436064,NULL,"VfB Stuttgart",3,"Ramon Hendriks",2001-07-18
+440386,NULL,"SV 07 Elversberg",31,"Maximilian Rohr",1995-06-27
+442891,NULL,"Bayer 04 Leverkusen",11,"Martin Terrier",1997-03-04
+443331,NULL,"SC Freiburg",6,"Patrick Osterhage",2000-02-01
+443710,NULL,"VfB Stuttgart",6,"Angelo Stiller",2001-04-04
+443855,NULL,"SC Paderborn 07",9,"Nick Bätzner",2000-03-15
+448177,NULL,"Eintracht Frankfurt",NULL,"Jessic Ngankam",2000-07-20
+448258,NULL,"VfB Stuttgart",4,"Josha Vagnoman",2000-12-11
+448259,NULL,"SV 07 Elversberg",19,"Lukas Pinckert",2000-01-22
+448705,NULL,"Borussia Dortmund",NULL,"Diant Ramaj",2001-09-19
+452477,NULL,"FC Schalke 04",20,"Junior Adamu",2001-06-06
+453016,NULL,"1.FSV Mainz 05",19,"Anthony Caci",1997-07-01
+453307,NULL,"SV 07 Elversberg",27,"Filimon Gerezgiher",2000-07-04
+453870,NULL,"1.FSV Mainz 05",17,"Benedict Hollerbach",2001-05-17
+454863,NULL,"1.FC Union Berlin",13,"András Schäfer",1999-04-13
+455922,NULL,"Borussia Mönchengladbach",23,"Jan Olschowsky",2001-11-18
+460655,NULL,"FC Schalke 04",9,"Moussa Sylla",1999-11-25
+464154,NULL,"1.FC Köln",NULL,"Imad Rondic",1999-02-16
+467250,NULL,"Borussia Mönchengladbach",22,"Yukhym Konoplya",1999-08-26
+467434,NULL,"RB Leipzig",20,"Rocco Reitz",2002-05-29
+467437,NULL,"Bayer 04 Leverkusen",10,"Malik Tillman",2002-05-28
+470038,NULL,"1.FSV Mainz 05",11,"Ransford Königsdörffer",2001-09-13
+472249,NULL,"1.FC Köln",29,"Jan Thielmann",2002-05-26
+475413,NULL,"FC Bayern München",23,"Sacha Boey",2000-09-13
+477109,NULL,"FC Schalke 04",11,"Bryan Lasme",1998-11-14
+480692,NULL,"FC Bayern München",14,"Luis Díaz",1997-01-13
+483046,NULL,"FC Bayern München",44,"Josip Stanisic",2000-04-02
+486046,NULL,"RB Leipzig",26,"Maarten Vandevoordt",2002-02-26
+490609,NULL,"1.FSV Mainz 05",1,"Lasse Rieß",2001-07-27
+493513,NULL,"SV Werder Bremen",13,"Karl Hein",2002-04-13
+496094,NULL,"Borussia Dortmund",27,"Karim Adeyemi",2002-01-18
+503160,NULL,"1.FSV Mainz 05",8,"Paul Nebel",2002-10-10
+503482,NULL,"FC Bayern München",3,"Min-jae Kim",1996-11-15
+503866,NULL,"Hamburger SV",11,"Albert Grønbæk",2001-05-23
+504153,NULL,"Borussia Mönchengladbach",29,"Joe Scally",2002-12-31
+504215,NULL,"Borussia Mönchengladbach",13,"Giovanni Reyna",2002-11-13
+505653,NULL,"Borussia Dortmund",21,"Fábio Silva",2002-07-19
+507341,NULL,"FC Augsburg",32,"Fabian Rieder",2002-02-16
+507345,NULL,"VfB Stuttgart",NULL,"Leonidas Stergiou",2002-03-03
+509650,NULL,"SC Paderborn 07",25,"Tjark Scheller",2002-01-12
+516978,NULL,"SC Paderborn 07",17,"Laurin Curda",2001-10-30
+518505,NULL,"VfB Stuttgart",18,"Jamie Leweling",2001-02-26
+519872,NULL,"1.FC Union Berlin",9,"Livan Burcu",2004-09-28
+521331,NULL,"SC Paderborn 07",4,"Nyamekye Awortwie-Grant",2000-08-07
+522245,NULL,"SV 07 Elversberg",21,"Lasse Günther",2003-03-21
+524290,NULL,"TSG 1899 Hoffenheim",11,"Fisnik Asllani",2002-08-08
+526466,NULL,"FC Augsburg",NULL,"Elias Saad",1999-12-27
+526845,NULL,"SC Freiburg",1,"Noah Atubolu",2002-05-25
+529895,NULL,"Hamburger SV",8,"Daniel Elfadli",1997-04-06
+532169,NULL,"SV 07 Elversberg",8,"Lukasz Poreba",2000-03-13
+533295,NULL,"TSG 1899 Hoffenheim",8,"Patrick Wimmer",2001-05-30
+536482,NULL,"Eintracht Frankfurt",NULL,"Junior Dina Ebimbe",2000-11-21
+536508,NULL,"FC Augsburg",4,"Han-Noah Massengo",2001-07-07
+539798,NULL,"VfB Stuttgart",14,"Luca Jaquez",2003-06-02
+542697,NULL,"1.FC Köln",NULL,"Rasmus Carstensen",2000-11-10
+544148,NULL,"Borussia Mönchengladbach",31,"Tomas Cvancara",2000-08-13
+549378,NULL,"Hamburger SV",12,"Sander Tangvik",2002-11-29
+550580,NULL,"Borussia Mönchengladbach",18,"Shuto Machino",1999-09-30
+552057,NULL,"TSG 1899 Hoffenheim",23,"Adam Hlozek",2002-07-25
+553285,NULL,"TSG 1899 Hoffenheim",19,"Tim Lemperle",2002-02-05
+557614,NULL,"FC Augsburg",NULL,"Nathanaël Mbuku",2002-03-16
+562948,NULL,"1.FSV Mainz 05",13,"Hyun-seok Hong",1999-06-16
+564545,NULL,"Bayer 04 Leverkusen",12,"Edmond Tapsoba",1999-02-02
+565424,NULL,"RB Leipzig",11,"Johan Bakayoko",2003-04-20
+566723,NULL,"FC Bayern München",17,"Michael Olise",2001-12-12
+569031,NULL,"TSG 1899 Hoffenheim",17,"Umut Tohumcu",2004-08-11
+569033,NULL,"FC Bayern München",NULL,"Armindo Sieb",2003-02-17
+569383,NULL,"FC Augsburg",5,"Chrislain Matsima",2002-05-15
+569385,NULL,"FC Schalke 04",24,"Adil Aouchiche",2002-07-15
+569387,NULL,"TSG 1899 Hoffenheim",15,"Valentin Gendrey",2000-06-21
+569457,NULL,"FC Augsburg",NULL,"Tim Breithaupt",2002-02-07
+570152,NULL,"SC Paderborn 07",33,"Marcel Hoffmeier",1999-07-15
+571299,NULL,"Eintracht Frankfurt",NULL,"Hrvoje Smolcic",2000-08-17
+574193,NULL,"TSG 1899 Hoffenheim",20,"Bambasé Conté",2003-07-07
+574201,NULL,"Borussia Mönchengladbach",28,"Grant-Leon Ranos",2003-07-20
+578392,NULL,"Borussia Dortmund",14,"Maximilian Beier",2002-10-17
+579287,NULL,"Borussia Dortmund",24,"Daniel Svensson",2002-02-12
+579459,NULL,"TSG 1899 Hoffenheim",21,"Albian Hajdari",2003-05-18
+579565,NULL,"1.FC Köln",8,"Ísak Jóhannesson",2003-03-23
+580195,NULL,"FC Bayern München",10,"Jamal Musiala",2003-02-26
+583699,NULL,"1.FC Union Berlin",23,"Andrej Ilic",2000-04-03
+591193,NULL,"Eintracht Frankfurt",NULL,"Niels Nkounkou",2000-11-01
+592387,NULL,"1.FC Köln",28,"Sebastian Sebulonsen",2000-01-27
+592534,NULL,"Hamburger SV",21,"Nicolai Remberg",2000-06-19
+594731,NULL,"1.FSV Mainz 05",3,"Fabio Gruber",2002-09-03
+596153,NULL,"SV Werder Bremen",11,"Justin Njinmah",2000-11-15
+597000,NULL,"1.FSV Mainz 05",5,"Eric Martel",2002-04-29
+597432,NULL,"1.FC Union Berlin",14,"Leopold Querfeld",2003-12-20
+599419,NULL,"SC Freiburg",37,"Max Rosenfelder",2003-02-10
+600942,NULL,"SC Paderborn 07",15,"Nahuel Noll",2003-03-17
+602796,NULL,"SC Paderborn 07",7,"Filip Bilbija",2000-04-24
+604358,NULL,"Borussia Mönchengladbach",20,"David Herold",2003-02-20
+604359,NULL,"FC Augsburg",NULL,"Yusuf Kabadayi",2004-02-02
+604756,NULL,"SV 07 Elversberg",17,"Frederik Schmahl",2002-12-21
+605268,NULL,"SC Freiburg",31,"Igor Matanovic",2003-03-31
+606113,NULL,"SC Paderborn 07",21,"Jano ter Horst",2002-06-19
+606220,NULL,"SC Paderborn 07",43,"Martin Ens",2001-12-20
+607720,NULL,"FC Bayern München",40,"Jonas Urbig",2003-08-08
+610190,NULL,"FC Augsburg",22,"Nediljko Labrovic",1999-10-10
+610400,NULL,"1.FSV Mainz 05",14,"William Bøving",2003-03-01
+612826,NULL,"1.FSV Mainz 05",26,Silas,1998-10-06
+613192,NULL,"Borussia Mönchengladbach",17,"Jens Castrop",2003-07-29
+616344,NULL,"VfB Stuttgart",8,"Tiago Tomás",2002-06-16
+618472,NULL,"RB Leipzig",23,"Castello Lukeba",2002-12-17
+618898,NULL,"TSG 1899 Hoffenheim",53,"Erencan Yardımcı",2002-02-04
+620217,NULL,"TSG 1899 Hoffenheim",2,"Robin Hranac",2000-01-29
+620295,NULL,"SC Freiburg",NULL,"Mio Backhaus",2004-04-16
+620598,NULL,"VfB Stuttgart",2,"Ameen Al-Dakhil",2002-03-06
+621802,NULL,"SV Werder Bremen",2,"Olivier Deman",2000-04-06
+627228,NULL,"Borussia Dortmund",2,"Yan Couto",2002-06-03
+629588,NULL,"Borussia Mönchengladbach",19,"Nathan Ngoumou",2000-03-14
+632349,NULL,"Bayer 04 Leverkusen",4,"Jarell Quansah",2003-01-29
+635645,NULL,"Eintracht Frankfurt",5,"Aurèle Amenda",2003-07-31
+636898,NULL,"SC Paderborn 07",28,"Lucas Copado",2004-01-10
+640556,NULL,"1.FC Köln",33,"Rav van den Berg",2004-07-07
+643574,NULL,"1.FSV Mainz 05",6,"Kaishu Sano",2000-12-30
+645774,NULL,"SC Freiburg",18,"Eren Dinkçi",2001-12-13
+649672,NULL,"Hamburger SV",24,"Nicolás Capaldo",1998-09-14
+654234,NULL,"FC Augsburg",30,"Anton Kade",2004-01-17
+654982,NULL,"VfB Stuttgart",11,"Bilal El Khannouss",2004-05-10
+654991,NULL,"SV Werder Bremen",7,"Samuel Mbangula",2004-01-16
+656681,NULL,"Bayer 04 Leverkusen",NULL,"Victor Boniface",2000-12-23
+658116,NULL,"1.FSV Mainz 05",37,"Ben Bobzien",2003-04-29
+659459,NULL,"Borussia Dortmund",17,"Carney Chukwuemeka",2003-10-20
+659542,NULL,"Eintracht Frankfurt",NULL,"Elye Wahi",2003-01-02
+664708,NULL,"Bayer 04 Leverkusen",6,"Equi Fernández",2002-07-25
+665618,NULL,"FC Schalke 04",13,"Satoshi Tanaka",2002-08-13
+667251,NULL,"Borussia Mönchengladbach",38,"Hugo Bolin",2003-07-24
+667457,NULL,"TSG 1899 Hoffenheim",7,"Leon Avdullahu",2004-02-23
+668606,NULL,"SC Freiburg",14,"Yuito Suzuki",2001-10-25
+675535,NULL,"Eintracht Frankfurt",NULL,"Noel Futkeu",2002-12-06
+675565,NULL,"FC Augsburg",24,"Thomas Kastanaras",2003-01-09
+684116,NULL,"Borussia Dortmund",31,"Silas Ostrzinski",2003-11-19
+684315,NULL,"Eintracht Frankfurt",34,"Nnamdi Collins",2004-01-10
+685484,NULL,"SC Paderborn 07",8,"Luka Duric",2003-06-18
+691892,NULL,"FC Bayern München",NULL,"Nathaniel Brown",2003-06-16
+692368,NULL,"Eintracht Frankfurt",11,"Younes Ebnoutalib",2003-09-13
+692737,NULL,"1.FC Union Berlin",6,"Aljoscha Kemlein",2004-08-02
+694132,NULL,"SC Paderborn 07",22,"Mattes Hansen",2004-05-15
+694507,NULL,"Hamburger SV",14,"Rayan Philippe",2000-10-23
+696028,NULL,"Borussia Mönchengladbach",NULL,"Noah Pesch",2005-05-18
+696164,NULL,"Bayer 04 Leverkusen",15,"Tim Oermann",2003-10-06
+697740,NULL,"FC Schalke 04",23,"Soufiane El-Faouzi",2002-07-13
+698843,NULL,"SC Paderborn 07",3,"Jonah Sticker",2004-05-08
+701757,NULL,"SV Werder Bremen",9,"Keke Topp",2004-03-25
+702869,NULL,"FC Bayern München",34,"Ismael Saibari",2001-01-28
+707242,NULL,"VfB Stuttgart",27,"Badredine Bouanani",2004-12-08
+711969,NULL,"VfB Stuttgart",22,"Lorenz Assignon",2000-06-22
+711996,NULL,"Hamburger SV",17,"Warmed Omari",2000-04-23
+713644,NULL,"FC Bayern München",NULL,"Bryan Zaragoza",2001-09-09
+717465,NULL,"VfB Stuttgart",36,"Laurin Ulrich",2005-01-31
+718303,NULL,"Bayer 04 Leverkusen",19,"Ernest Poku",2004-01-28
+718460,NULL,"TSG 1899 Hoffenheim",36,"Lúkas Petersson",2004-02-09
+720162,NULL,"VfB Stuttgart",17,"Justin Diehl",2004-11-27
+720948,NULL,"SC Paderborn 07",14,"Mika Baur",2004-07-09
+724104,NULL,"Borussia Mönchengladbach",2,"Fabio Chiarodia",2005-06-05
+726120,NULL,"Eintracht Frankfurt",NULL,"Simon Simoni",2004-07-14
+726701,NULL,"FC Augsburg",21,"Rodrigo Ribeiro",2005-04-28
+730486,NULL,"FC Augsburg",42,"Mahmut Kücüksahin",2004-04-07
+730581,NULL,"Bayer 04 Leverkusen",5,"Loïc Badé",2000-04-11
+733371,NULL,"1.FSV Mainz 05",24,"Sota Kawasaki",2001-07-30
+738774,NULL,"1.FC Union Berlin",4,"Zeno Van Den Bosch",2003-07-06
+743395,NULL,"Bayer 04 Leverkusen",NULL,"Noah Mbamba",2005-01-05
+743500,NULL,"Hamburger SV",2,"William Mikelbrencis",2004-02-25
+744558,NULL,"1.FC Köln",NULL,"Julian Pauli",2005-07-18
+744728,NULL,"FC Bayern München",22,"Arijon Ibrahimovic",2005-12-11
+744729,NULL,"FC Bayern München",28,"Tarek Buchmann",2005-02-28
+744857,NULL,"Eintracht Frankfurt",2,"Elias Baum",2005-10-26
+745075,NULL,"1.FC Union Berlin",17,"David Preu",2004-10-26
+748506,NULL,"FC Schalke 04",NULL,"Martin Wasinski",2004-04-07
+763948,NULL,"RB Leipzig",21,"Ayodele Thomas",2007-07-23
+774531,NULL,"FC Schalke 04",32,"Luca Podlech",2005-03-23
+777005,NULL,"FC Augsburg",36,"Mert Kömür",2005-07-17
+787151,NULL,"Borussia Mönchengladbach",26,"Lukas Ullrich",2004-03-16
+787912,NULL,"RB Leipzig",5,"El Chadaille Bitshiabu",2005-05-16
+789898,NULL,"TSG 1899 Hoffenheim",10,"Muhammed Damar",2004-04-09
+792380,NULL,"FC Bayern München",45,"Aleksandar Pavlovic",2004-05-03
+793728,NULL,"SC Paderborn 07",NULL,"Marco Wörner",2004-09-25
+795724,NULL,"1.FC Köln",NULL,"Emin Kujovic",2004-09-29
+795762,NULL,"1.FC Köln",NULL,"Elias Bakatukanda",2004-04-13
+796213,NULL,"1.FSV Mainz 05",44,"Nelson Weiper",2005-03-17
+796297,NULL,"Borussia Dortmund",7,"Jobe Bellingham",2005-09-23
+798043,NULL,"1.FC Union Berlin",15,"Tom Rothe",2004-10-29
+798091,NULL,"SC Paderborn 07",NULL,"Tristan Zobel",2003-10-04
+799993,NULL,"Eintracht Frankfurt",29,"Ayoube Amaimouni-Echghouyab",2004-11-30
+800946,NULL,"VfB Stuttgart",NULL,"Dennis Seimen",2005-12-01
+802560,NULL,"FC Schalke 04",15,"Emil Højlund",2005-01-04
+806007,NULL,"SV 07 Elversberg",4,"Luis Seifert",2004-01-26
+807386,NULL,"RB Leipzig",9,"Conrad Harder",2005-04-07
+810649,NULL,"RB Leipzig",35,"Max Finkgräfe",2004-03-27
+810895,NULL,"Bayer 04 Leverkusen",17,"Eliesse Ben Seghir",2005-02-16
+814950,NULL,"Hamburger SV",22,"Kofi Amoako",2005-05-06
+814986,NULL,"SC Paderborn 07",19,"Albert Millgramm",2004-11-12
+815078,NULL,"SC Freiburg",33,"Jordy Makengo",2001-08-03
+815322,NULL,"SV 07 Elversberg",43,"Felix Keidel",2003-06-14
+815838,NULL,"Hamburger SV",NULL,"Joel Agyekum",2005-03-08
+816585,NULL,"Eintracht Frankfurt",42,"Can Uzun",2005-11-11
+817521,NULL,"1.FSV Mainz 05",40,"Maximilian Kinzig",2003-12-04
+819215,NULL,"Borussia Dortmund",NULL,"Julien Duranville",2006-05-05
+820957,NULL,"SC Freiburg",7,"Derry Scherhant",2002-11-10
+822959,NULL,"FC Bayern München",20,"Tom Bischof",2005-06-28
+826795,NULL,"SV Werder Bremen",NULL,"Dariusz Stalmach",2005-12-08
+829267,NULL,"SC Paderborn 07",30,"Stefano Marino",2004-03-12
+829316,NULL,"SV 07 Elversberg",7,"Maurice Krattenmacher",2005-08-11
+829838,NULL,"TSG 1899 Hoffenheim",40,"Hennes Behrens",2005-01-19
+830108,NULL,"SV Werder Bremen",22,"Julián Malatini",2001-05-31
+838236,NULL,"1.FC Union Berlin",NULL,"Marin Ljubicic",2002-02-28
+846310,NULL,"Eintracht Frankfurt",6,"Oscar Højlund",2005-01-04
+849090,NULL,"SV 07 Elversberg",18,"Mohammad Mahmoud",2005-02-13
+855015,NULL,"Eintracht Frankfurt",8,"Farès Chaïbi",2002-11-28
+855134,NULL,"SV Werder Bremen",28,"Skelly Alvero",2002-05-04
+863759,NULL,"SC Freiburg",43,"Bruno Ogbus",2005-12-17
+865682,NULL,"RB Leipzig",6,"Ezechiel Banzuzi",2005-02-16
+866579,NULL,"Borussia Dortmund",37,"Cole Campbell",2006-02-20
+875332,NULL,"TSG 1899 Hoffenheim",35,"Arthur Chaves",2001-01-29
+883007,NULL,"Borussia Dortmund",39,"Filippo Mane",2005-03-08
+884810,NULL,"Borussia Dortmund",38,"Kjell Wätjen",2006-02-16
+884820,NULL,"Borussia Dortmund",42,"Almugera Kabar",2006-06-06
+890532,NULL,"1.FC Köln",34,"Fayssal Harchaoui",2006-01-15
+892973,NULL,"FC Bayern München",NULL,"Lovro Zvonarek",2005-05-08
+894914,NULL,"RB Leipzig",7,"Antonio Nusa",2005-04-17
+897402,NULL,"Bayer 04 Leverkusen",NULL,"Farid Alfa-Ruprecht",2006-03-28
+897424,NULL,"RB Leipzig",8,"Assan Ouédraogo",2006-05-09
+897425,NULL,"RB Leipzig",NULL,"Timo Schlieck",2006-03-02
+897479,NULL,"SC Paderborn 07",38,"Bennit Bröger",2006-07-01
+897480,NULL,"SV 07 Elversberg",10,"Noah Darvich",2006-09-25
+897505,NULL,"VfB Stuttgart",45,"Lazar Jovanovic",2006-11-30
+901877,NULL,"1.FSV Mainz 05",20,"Otto Ruoppi",2006-01-31
+904974,NULL,"FC Bayern München",NULL,"Noel Aseko",2005-11-22
+905011,NULL,"Bayer 04 Leverkusen",30,"Ibrahim Maza",2005-11-24
+907082,NULL,"SC Freiburg",36,"Karl Steinmann",2005-12-13
+907085,NULL,"SC Paderborn 07",2,"Ruben Müller",2005-08-24
+907087,NULL,"SC Freiburg",27,"Berkay Yılmaz",2005-02-25
+907277,NULL,"TSG 1899 Hoffenheim",4,"Sean Dulic",2005-06-05
+910538,NULL,"SV 07 Elversberg",15,"Raif Adam",2005-09-07
+910541,NULL,"Hamburger SV",45,"Fábio Baldé",2005-07-20
+916623,NULL,"SC Freiburg",42,"Keisuke Goto",2005-06-03
+919515,NULL,"Bayer 04 Leverkusen",NULL,"Jeanuël Belocian",2005-02-17
+919703,NULL,"FC Schalke 04",33,"Vitalie Becker",2005-03-03
+920946,NULL,"FC Schalke 04",37,"Max Grüger",2005-05-24
+923595,NULL,"TSG 1899 Hoffenheim",9,"Max Moerstedt",2006-01-15
+923945,NULL,"FC Augsburg",40,"Noahkai Banks",2006-12-01
+924117,NULL,"VfB Stuttgart",29,"Finn Jeltsch",2006-07-17
+926694,NULL,"RB Leipzig",NULL,"Arthur Vermeeren",2005-02-07
+926763,NULL,"SV Werder Bremen",NULL,Chuki,2004-04-29
+927353,NULL,"SC Freiburg",44,"Johan Manzambi",2005-10-14
+929912,NULL,"Bayer 04 Leverkusen",NULL,"Ken Izekor",2007-05-24
+929943,NULL,"SV 07 Elversberg",40,"Francis Onyeka",2007-04-29
+929992,NULL,"FC Schalke 04",47,"Zaid Tchibara",2006-02-21
+929994,NULL,"Bayer 04 Leverkusen",NULL,"Kerim Alajbegovic",2007-09-21
+930013,NULL,"SC Paderborn 07",31,"Florian Pruhs",2006-02-06
+930998,NULL,"TSG 1899 Hoffenheim",31,"Yannick Eduardo",2006-01-23
+931838,NULL,"Eintracht Frankfurt",16,"Hugo Larsson",2004-06-27
+934317,NULL,"1.FSV Mainz 05",47,"Maxim Dal",2006-01-26
+934529,NULL,"TSG 1899 Hoffenheim",45,"Kelven Frees",2005-02-03
+939964,NULL,"Eintracht Frankfurt",19,"Jean-Mattéo Bahoya",2005-05-07
+941177,NULL,"RB Leipzig",NULL,"Robert Ramsak",2006-10-28
+942497,NULL,"1.FC Köln",22,"Jahmai Simpson-Pusey",2005-11-04
+943795,NULL,"VfB Stuttgart",NULL,"Jovan Milosevic",2005-07-31
+944331,NULL,"1.FC Köln",38,"Youssoupha Niang",2006-03-25
+948279,NULL,"VfB Stuttgart",30,"Chema Andrés",2005-04-25
+949389,NULL,"SC Paderborn 07",24,"Niklas Mohr",2004-07-23
+952282,NULL,"Bayer 04 Leverkusen",NULL,"Afonso Moreira",2005-03-19
+952779,NULL,"RB Leipzig",33,"Andrija Maksimovic",2007-06-05
+955448,NULL,"RB Leipzig",27,"Tidiam Gomis",2006-08-08
+957526,NULL,"Borussia Mönchengladbach",47,"Zento Uno",2003-11-20
+957874,NULL,"RB Leipzig",40,Rômulo,2002-02-08
+960444,NULL,"FC Augsburg",43,"Oliver Sorg",2007-07-31
+969376,NULL,"FC Schalke 04",43,"Mertcan Ayhan",2006-09-08
+971663,NULL,"VfB Stuttgart",25,"Jeremy Arévalo",2005-03-19
+974894,NULL,"SV 07 Elversberg",42,"David Mokwa",2004-05-03
+977464,NULL,"Bayer 04 Leverkusen",13,Arthur,2003-03-17
+982863,NULL,"FC Augsburg",NULL,"Kyliane Dong",2004-09-27
+983677,NULL,"TSG 1899 Hoffenheim",39,"Mats Rots",2006-03-11
+987770,NULL,"TSG 1899 Hoffenheim",NULL,"Alessandro Vogt",2005-02-03
+990146,NULL,"RB Leipzig",NULL,"Joyeux Masanka Bungi",2007-01-24
+991480,NULL,"Bayer 04 Leverkusen",NULL,"Naba Mensah",2007-05-08
+995520,NULL,"1.FC Union Berlin",NULL,"Oluwaseun Ogbemudia",2006-07-18
+997861,NULL,"Eintracht Frankfurt",40,"Kauã Santos",2003-04-11
+1000675,NULL,"Bayer 04 Leverkusen",NULL,"Alejo Sarco",2006-01-06
+1005509,NULL,"SC Paderborn 07",5,"Santiago Castañeda",2004-11-13
+1009439,NULL,"FC Bayern München",1,"Leon Klanac",2007-03-01
+1017047,NULL,"FC Schalke 04",NULL,"Mauro Zalazar",2005-04-13
+1018259,NULL,"TSG 1899 Hoffenheim",14,"Gift Orban",2002-07-17
+1024924,NULL,"RB Leipzig",NULL,"Ota Yamamoto",2004-06-04
+1025989,NULL,"SV Werder Bremen",1,"Stefan Smarkalev",2007-05-14
+1027870,NULL,"1.FC Union Berlin",3,"Andrik Markgraf",2006-03-07
+1030528,NULL,"VfB Stuttgart",NULL,"Tim van der Leij",2006-03-06
+1033581,NULL,"1.FC Union Berlin",NULL,"Julien Friedrich",2006-11-12
+1035765,NULL,"1.FC Union Berlin",10,"Ilyas Ansah",2004-11-08
+1042472,NULL,"SV Werder Bremen",29,"Salim Musah",2006-02-22
+1045446,NULL,"1.FC Union Berlin",30,"Dmytro Bogdanov",2007-03-06
+1045986,NULL,"SV Werder Bremen",33,"Mick Schmetgens",2007-09-09
+1047136,NULL,"TSG 1899 Hoffenheim",32,"Cajetan Lenz",2006-06-16
+1047294,NULL,"FC Schalke 04",36,"Johannes Siebeking",2006-03-02
+1048715,NULL,"Hamburger SV",41,"Fernando Dickes",2007-10-13
+1052420,NULL,"Hamburger SV",22,"Aboubaka Soumahoro",2005-02-04
+1058359,NULL,"Borussia Dortmund",40,"Samuele Inácio",2008-04-02
+1058514,NULL,"Bayer 04 Leverkusen",42,"Montrell Culbreath",2007-08-29
+1058520,NULL,"Hamburger SV",49,"Otto Stange",2007-02-09
+1067904,NULL,"TSG 1899 Hoffenheim",29,"Bazoumana Touré",2006-03-02
+1069641,NULL,"FC Augsburg",41,"Felix Meiser",2007-01-16
+1070979,NULL,"Borussia Mönchengladbach",36,"Wael Mohya",2008-12-31
+1071244,NULL,"SV Werder Bremen",NULL,"Darwin Soylu",2007-03-23
+1072865,NULL,"1.FC Union Berlin",NULL,"Leon Prosche",2007-02-13
+1073625,NULL,"Bayer 04 Leverkusen",NULL,"Aleksa Damjanovic",2008-12-04
+1073748,NULL,"1.FSV Mainz 05",48,"Kacper Potulski",2007-10-19
+1074526,NULL,"RB Leipzig",NULL,"Viggo Gebel",2007-11-22
+1074990,NULL,"Borussia Dortmund",49,"Luca Reggiani",2008-01-09
+1075143,NULL,"TSG 1899 Hoffenheim",NULL,"Natnael Abraha",2008-03-14
+1075147,NULL,"FC Bayern München",42,"Lennart Karl",2008-02-22
+1075577,NULL,"Borussia Dortmund",NULL,"Joane Gadou",2007-01-17
+1077670,NULL,"Bayer 04 Leverkusen",16,"Axel Tape",2007-08-10
+1078750,NULL,"SV Werder Bremen",NULL,"Luca Höcker",2007-06-01
+1079622,NULL,"Eintracht Frankfurt",39,"Amil Siljevic",2007-01-19
+1084638,NULL,"SV Werder Bremen",31,"Karim Coulibaly",2007-05-23
+1103940,NULL,"FC Schalke 04",2,"Felipe Sánchez",2004-04-07
+1104418,NULL,"SC Paderborn 07",10,"Kennedy Okpala",2004-12-17
+1108022,NULL,"TSG 1899 Hoffenheim",38,"Deniz Zeitler",2006-12-13
+1114155,NULL,"SV Werder Bremen",24,"Patrice Covic",2007-06-25
+1116191,NULL,"TSG 1899 Hoffenheim",16,"Luis Engelns",2007-03-11
+1118293,NULL,"1.FC Köln",40,"Fynn Schenten",2007-09-14
+1118495,NULL,"FC Bayern München",14,"David Santos Daiber",2007-01-10
+1118874,NULL,"Borussia Mönchengladbach",5,"Jan Leszczyński",2007-04-12
+1125079,NULL,"Hamburger SV",NULL,"Shafiq Nandja",2007-01-15
+1130445,NULL,"RB Leipzig",2,"Abdoul Koné",2005-04-22
+1131117,NULL,"VfB Stuttgart",35,"Mirza Catovic",2007-05-01
+1131153,NULL,"1.FC Union Berlin",NULL,"Tim Blaszczak",2007-08-25
+1131924,NULL,"Bayer 04 Leverkusen",NULL,"Jeremiah Mensah",2008-02-21
+1132292,NULL,"FC Augsburg",31,"Faik Sakar",2008-01-14
+1133977,NULL,"Bayer 04 Leverkusen",41,"Issa Traoré",2007-11-14
+1141179,NULL,"Borussia Dortmund",NULL,"Mussa Kaba",2008-11-17
+1145064,NULL,"SC Freiburg",22,"Cyriaque Irié",2005-06-20
+1146988,NULL,"Eintracht Frankfurt",26,"Keita Kosugi",2006-03-18
+1148239,NULL,"FC Schalke 04",35,"Mika Wallentowitz",2007-12-28
+1148887,NULL,"SC Paderborn 07",29,"Clemens Lippmann",2006-06-29
+1149528,NULL,"Hamburger SV",NULL,"Finn Barkowsky",2008-02-12
+1159439,NULL,"SC Freiburg",39,"Rouven Tarnutzer",2007-07-24
+1159486,NULL,"SV 07 Elversberg",12,"Elias Etringer",2007-11-24
+1162413,NULL,"FC Schalke 04",38,"Luca Vozar",2007-05-06
+1162925,NULL,"1.FC Union Berlin",NULL,"Mekhi Gray",2007-02-19
+1168219,NULL,"1.FC Köln",13,"Said El Mala",2006-08-26
+1168222,NULL,"1.FC Köln",19,"Malek El Mala",2005-04-02
+1178695,NULL,"SV Werder Bremen",NULL,"Kenny Quetant",2006-07-17
+1182738,NULL,"Bayer 04 Leverkusen",NULL,"Abdoulaye Faye",2004-09-22
+1184986,NULL,"Eintracht Frankfurt",31,"Love Arrhov",2008-05-17
+1185507,NULL,"Borussia Dortmund",NULL,"Justin Lerma",2008-05-05
+1188989,NULL,"FC Schalke 04",3,"Dylan Leonard",2007-08-30
+1193849,NULL,"Borussia Dortmund",41,"Mathis Albert",2009-05-21
+1213681,NULL,"Hamburger SV",38,"Alexander Røssing-Lelesiit",2007-01-20
+1214123,NULL,"Bayer 04 Leverkusen",18,"Kennet Eichhorn",2009-07-27
+1235583,NULL,"RB Leipzig",18,"Suleman Sani",2006-09-01
+1259986,NULL,"Eintracht Frankfurt",35,"Malik Pimpong",2008-01-01
+1279157,NULL,"RB Leipzig",37,"Benno Kaltefleiter",2008-02-14
+1294853,NULL,"Hamburger SV",7,"Louis Lemke",2009-10-08
+1299403,NULL,"SC Paderborn 07",32,"Lasse Eickel",2008-02-28
+1302766,NULL,"FC Schalke 04",NULL,"Steve Noode",2005-06-02
+1309324,NULL,"FC Augsburg",39,"Uchenna Ogundu",2006-05-12
+1364454,NULL,"Bayer 04 Leverkusen",35,"Christian Kofane",2006-07-26
+1378338,NULL,"1.FC Union Berlin",49,"Linus Güther",2010-04-08
+1390649,NULL,"RB Leipzig",49,"Yan Diomande",2006-11-14
+1392804,NULL,"Bayer 04 Leverkusen",NULL,"Ndjicoura Bomba",2008-03-12
