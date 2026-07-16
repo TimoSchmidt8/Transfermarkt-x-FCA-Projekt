@@ -36,7 +36,7 @@ def get_connection():
         port=int(os.getenv("MYSQL_PORT", "3306")),
         user=os.getenv("MYSQL_USER", "root"),
         password=os.getenv("MYSQL_PASSWORD", ""),
-        database=os.getenv("MYSQL_DATABASE", "football_game"),
+        database="football_game",
     )
 
 def get_soup(url):
@@ -154,14 +154,19 @@ def scrape_player_details(player_id, club_name):
 def save_to_db_complete(data, saison_name, market_value):
     conn = get_connection()
     cursor = conn.cursor()
-    # Speichert Spieler
-    cursor.execute("""
-        INSERT INTO bl_players (tm_id, full_name_tm, saison, club_name, shirt_number)
-        VALUES (%s, %s, %s, %s, %s)
-        ON DUPLICATE KEY UPDATE full_name_tm=VALUES(full_name_tm)
-    """, (data['tm_id'], data['full_name_tm'], saison_name, data['club_name'], data['shirt_number']))
     
-    # Speichert Marktwert
+    # 1. Namen splitten
+    name_parts = data['full_name_tm'].split(' ', 1)
+    vorname = name_parts[0]
+    nachname = name_parts[1] if len(name_parts) > 1 else ""
+    
+    # 2. Speichert Spieler mit den neuen Spalten
+    cursor.execute("""
+        INSERT INTO bl_players (tm_id, vorname, nachname, saison, club_name, shirt_number)
+        VALUES (%s, %s, %s, %s, %s, %s)
+        ON DUPLICATE KEY UPDATE vorname=VALUES(vorname), nachname=VALUES(nachname)
+    """, (data['tm_id'], vorname, nachname, saison_name, data['club_name'], data['shirt_number']))
+
    # Speichert Marktwert
     if market_value:
         cursor.execute("""
@@ -190,27 +195,50 @@ def main():
         print(f"\n=== STARTE SAISON {saison_name} ===")
         
         for club in clubs:
-            # CHECKPOINT: Wenn Verein in Saison fertig, überspringe ihn sofort
+            # 1. Prüfen, ob wir diesen Verein für diese Saison schon haben
             if check_already_scraped(club['name'], saison_name):
                 print(f"  {club['name']} für {saison_name} bereits vorhanden. Überspringe...")
                 continue
             
             print(f"--- Scrape Kader von: {club['name']} ---")
-            player_ids = get_players_from_club(club['url'])
             
-            for p_id in player_ids:
+            # URL bauen (ähnlich wie in deinem bewährten Skript)
+            # Hinweis: Stelle sicher, dass squad_url korrekt die SaisonID enthält
+            squad_url = f"{BASE_URL}{club['url'].replace('/startseite/verein/', '/kader/verein/')}/saison_id/{saison_id}"
+            
+            squad_soup = get_soup(squad_url)
+            table = squad_soup.find("table", class_="items")
+            if not table:
+                continue
+
+            # Jede Zeile der Tabelle einzeln durchgehen
+            for row in table.find_all("tr", class_=["odd", "even"]):
+                link = row.find("a", href=re.compile(r"/profil/spieler/"))
+                if not link:
+                    continue
+                
+                p_id = re.search(r"spieler/(\d+)", link['href']).group(1)
+                
                 try:
+                    # JETZT WARTEN: Das Skript macht hier erst weiter, wenn get_player_details fertig ist
                     data = scrape_player_details(p_id, club['name'])
-                    # MW Logik: Letzter Wert der Saison
+                    
+                    # Marktwert-Logik
                     saison_year = saison_name.split('_')[0]
                     relevant_values = [h['value'] for h in data['history'] if h['date'].startswith(saison_year)]
                     mw = relevant_values[-1] if relevant_values else None
                     
+                    # Speichern
                     save_to_db_complete(data, saison_name, mw)
-                    time.sleep(8) 
+                    
+                    print(f"  -> Gespeichert: {data['full_name_tm']} (ID: {p_id}) | MW: {mw}")
+                    
+                    # Kurze Pause pro Spieler, um Transfermarkt nicht zu fluten
+                    time.sleep(2) 
+                    
                 except Exception as e:
-                    print(f"  Fehler bei {p_id}: {e}")
-                time.sleep(6)
+                    print(f"  Fehler bei Spieler {p_id}: {e}")
+                    time.sleep(10) 
 
 if __name__ == "__main__":
     main()
