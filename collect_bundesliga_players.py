@@ -72,6 +72,10 @@ def get_player_details(player_id):
 def save_to_db(p_id, details, saison_name, club_name):
     conn = get_connection()
     cursor = conn.cursor()
+    
+    # Debug: Print um zu sehen, ob saison_name hier ankommt
+    print(f"DEBUG DB: Speichere {p_id} in Saison {saison_name}")
+    
     cursor.execute("""
         INSERT INTO bl_players (tm_id, full_name_tm, position, saison, club_name, shirt_number)
         VALUES (%s, %s, %s, %s, %s, %s)
@@ -79,14 +83,17 @@ def save_to_db(p_id, details, saison_name, club_name):
             full_name_tm = VALUES(full_name_tm),
             position = VALUES(position),
             club_name = VALUES(club_name),
-            shirt_number = VALUES(shirt_number)
+            shirt_number = VALUES(shirt_number),
+            saison = VALUES(saison)
     """, (p_id, details['name'], details['position'], saison_name, club_name, details['shirt_number']))
+    
     conn.commit()
     cursor.close()
     conn.close()
 
 def main():
     # 1. Vereine sammeln (das gibt uns die Liste mit Name und URL)
+
     print("Sammle Bundesliga-Vereine...")
     url = f"{BASE_URL}/bundesliga/startseite/wettbewerb/L1"
     soup = get_soup(url)
