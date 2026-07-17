@@ -151,29 +151,28 @@ def scrape_player_details(player_id, club_name):
         "history": history
     }
 
-def save_to_db_complete(data, saison_name, market_value):
+def save_player_and_market_history(data, saison_name):
     conn = get_connection()
     cursor = conn.cursor()
     
-    # 1. Namen splitten
+    # 1. Spieler-Stammdaten speichern
     name_parts = data['full_name_tm'].split(' ', 1)
     vorname = name_parts[0]
     nachname = name_parts[1] if len(name_parts) > 1 else ""
     
-    # 2. Speichert Spieler mit den neuen Spalten
     cursor.execute("""
         INSERT INTO bl_players (tm_id, vorname, nachname, saison, club_name, shirt_number)
         VALUES (%s, %s, %s, %s, %s, %s)
         ON DUPLICATE KEY UPDATE vorname=VALUES(vorname), nachname=VALUES(nachname)
     """, (data['tm_id'], vorname, nachname, saison_name, data['club_name'], data['shirt_number']))
 
-   # Speichert Marktwert
-    if market_value:
+    # 2. ALLE historischen Marktwert-Punkte einzeln speichern
+    for entry in data['history']:
         cursor.execute("""
-            INSERT INTO bl_market_values (tm_id, saison, market_value_eur)
-            VALUES (%s, %s, %s)
+            INSERT INTO bl_market_values (tm_id, saison, market_value_eur, updated_at)
+            VALUES (%s, %s, %s, %s)
             ON DUPLICATE KEY UPDATE market_value_eur=VALUES(market_value_eur)
-        """, (data['tm_id'], saison_name, market_value))
+        """, (data['tm_id'], saison_name, entry['value'], entry['date']))
     
     conn.commit()
     cursor.close()
@@ -223,13 +222,7 @@ def main():
                     # JETZT WARTEN: Das Skript macht hier erst weiter, wenn get_player_details fertig ist
                     data = scrape_player_details(p_id, club['name'])
                     
-                    # Marktwert-Logik
-                    saison_year = saison_name.split('_')[0]
-                    relevant_values = [h['value'] for h in data['history'] if h['date'].startswith(saison_year)]
-                    mw = relevant_values[-1] if relevant_values else None
-                    
-                    # Speichern
-                    save_to_db_complete(data, saison_name, mw)
+                    save_player_and_market_history(data, saison_name)
                     
                     print(f"  -> Gespeichert: {data['full_name_tm']} (ID: {p_id}) | MW: {mw}")
                     
