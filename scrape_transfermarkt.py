@@ -18,7 +18,9 @@ HEADERS = {
 }
 
 BASE_URL = "https://www.transfermarkt.de"
-SAISONS = {"2022_2023": "2022", "2023_2024": "2023", "2024_2025": "2024", "2025_2026": "2025"}
+
+# NEU: Generiert automatisch ALLE Saisons seit der Einführung der Marktwerte (2004) bis heute
+SAISONS = {f"{year}_{year+1}": str(year) for year in range(2004, 2026)}
 
 def get_robust_session():
     session = requests.Session()
@@ -39,6 +41,28 @@ def get_connection():
         database="football_game",
     )
 
+def setup_database_automatically():
+    """Reißt die kaputte Tabelle ab und baut sie mit Duplikat-Schutz neu auf."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    print("-> Bereinige und strukturiere Datenbank automatisch...")
+    
+    cursor.execute("DROP TABLE IF EXISTS bl_market_values")
+    
+    cursor.execute("""
+        CREATE TABLE bl_market_values (
+            tm_id INT,
+            market_value_eur BIGINT,
+            last_updated DATE,
+            saison VARCHAR(20),
+            UNIQUE KEY unique_player_date (tm_id, last_updated)
+        )
+    """)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    print("-> Datenbank-Setup abgeschlossen. Tabelle ist jetzt perfekt.")
+
 def get_soup(url):
     while True:
         try:
@@ -47,13 +71,13 @@ def get_soup(url):
             return BeautifulSoup(response.text, "lxml")
         except (requests.exceptions.RetryError, requests.exceptions.HTTPError) as e:
             if "502" in str(e) or "504" in str(e):
-                print(f"  Transfermarkt blockt (502/504). Warte 120 Sekunden...")
+                print("  Transfermarkt blockt (502/504). Warte 120 Sekunden...")
                 time.sleep(120)
             else:
                 raise e
 
 def fetch_all_market_values(player_id):
-    """Holt die gesamte Marktwert-Historie."""
+    """Holt die Historie und berechnet die Saison direkt aus dem Datum."""
     url = f"{BASE_URL}/ceapi/marketValueDevelopment/graph/{player_id}"
     try:
         response = http_session.get(url, headers=HEADERS, timeout=10)
@@ -65,315 +89,94 @@ def fetch_all_market_values(player_id):
                 if raw_date and "." in raw_date:
                     parts = raw_date.split(".")
                     if len(parts) == 3:
-                        formatted_date = f"{parts[2]}-{parts[1]}-{parts[0]}"
-                        history.append({"value": entry.get("y"), "date": formatted_date})
+                        day = int(parts[0])
+                        month = int(parts[1])
+                        year = int(parts[2])
+                        
+                        formatted_date = f"{year}-{month:02d}-{day:02d}"
+                        
+                        if month >= 7:
+                            saison_calc = f"{year}_{year+1}"
+                        else:
+                            saison_calc = f"{year-1}_{year}"
+
+                        history.append({
+                            "value": entry.get("y"), 
+                            "date": formatted_date,
+                            "saison": saison_calc
+                        })
             return history
     except Exception:
         pass
     return []
 
 def get_bundesliga_clubs():
-    print("Rufe Bundesliga-Clubs ab...")
     url = f"{BASE_URL}/bundesliga/startseite/wettbewerb/L1"
     soup = get_soup(url)
-    
     clubs = []
     table = soup.select_one("#yw1 table.items tbody")
     if not table:
         return clubs
-        
     for row in table.select("tr"):
         link_tag = row.select_one("td.hauptlink a")
         if link_tag:
-            club_name = link_tag.get("title", link_tag.get_text(strip=True))
             club_url = link_tag.get("href")
-            clubs.append({"name": club_name, "url": club_url})
-            
-    seen = set()
-    unique_clubs = []
-    for c in clubs:
-        if c["name"] not in seen:
-            seen.add(c["name"])
-            unique_clubs.append(c)
-            
-    print(f"{len(unique_clubs)} Vereine gefunden.")
-    return unique_clubs
+            clubs.append(club_url)
+    return list(set(clubs))
 
-def scrape_player_details(player_id, club_name):
-    profile_url = f"{BASE_URL}/-/profil/spieler/{player_id}"
-    profile_soup = get_soup(profile_url)
-
-    name_tag = profile_soup.find("h1")
-    raw_name = name_tag.get_text(" ", strip=True) if name_tag else f"Unknown {player_id}"
-
-    shirt_number = None
-    number_match = re.match(r"^#(\d+)\s+", raw_name)
-    if number_match:
-        shirt_number = int(number_match.group(1))
-
-    full_name_tm = re.sub(r"^#\d+\s+", "", raw_name).strip()
-
-    date_of_birth = None
-    dob_tag = profile_soup.find(attrs={"itemprop": "birthDate"})
-    if dob_tag:
-        date_text = dob_tag.get_text(strip=True).split('(')[0].strip()
-        parts = date_text.split('.')
-        if len(parts) == 3:
-            date_of_birth = f"{parts[2]}-{parts[1]}-{parts[0]}"
-            
-    history = fetch_all_market_values(player_id)
-
-    return {
-        "tm_id": player_id,
-        "club_name": club_name,
-        "shirt_number": shirt_number,
-        "full_name_tm": full_name_tm,
-        "date_of_birth": date_of_birth,
-        "history": history
-    }
-
-def save_player_and_market_history(data, saison_name):
+def save_market_values(player_id, history):
+    """Speichert Marktwert, Datum und Saison fehlerfrei ab."""
+    if not history:
+        return
     conn = get_connection()
     cursor = conn.cursor()
-    
-    # 1. Spieler-Stammdaten speichern
-    name_parts = data['full_name_tm'].split(' ', 1)
-    vorname = name_parts[0]
-    nachname = name_parts[1] if len(name_parts) > 1 else ""
-    
-    cursor.execute("""
-        INSERT INTO bl_players (tm_id, vorname, nachname, saison, club_name, shirt_number)
-        VALUES (%s, %s, %s, %s, %s, %s)
-        ON DUPLICATE KEY UPDATE vorname=VALUES(vorname), nachname=VALUES(nachname)
-    """, (data['tm_id'], vorname, nachname, saison_name, data['club_name'], data['shirt_number']))
-
-    # 2. ALLE historischen Marktwert-Punkte FÜR DIESE SAISON einzeln speichern
-    saison_year = saison_name.split('_')[0]
-    for entry in data['history']:
-        # Nur Werte aus der passenden Saison in die Datenbank schreiben
-        if entry['date'].startswith(saison_year):
-            cursor.execute("""
-                INSERT INTO bl_market_values (tm_id, saison, market_value_eur, updated_at)
-                VALUES (%s, %s, %s, %s)
-                ON DUPLICATE KEY UPDATE market_value_eur=VALUES(market_value_eur)
-            """, (data['tm_id'], saison_name, entry['value'], entry['date']))
-    
-    conn.commit()
-    cursor.close()
-    conn.close()
-
-def main():
-    clubs = get_bundesliga_clubs()
-    
-    for saison_name, saison_id in SAISONS.items():
-        print(f"\n=== STARTE SAISON {saison_name} ===")
-        
-        for club in clubs:
-            # CHECK WURDE ENTFERNT, DAMIT ER ALLES NEU MACHT
-            print(f"--- Scrape Kader von: {club['name']} ---")
-            
-            squad_url = f"{BASE_URL}{club['url'].replace('/startseite/verein/', '/kader/verein/')}/saison_id/{saison_id}"
-            squad_soup = get_soup(squad_url)
-            table = squad_soup.find("table", class_="items")
-            if not table:
-                continue
-
-            for row in table.find_all("tr", class_=["odd", "even"]):
-                link = row.find("a", href=re.compile(r"/profil/spieler/"))
-                if not link:
-                    continue
-                
-                p_id = re.search(r"spieler/(\d+)", link['href']).group(1)
-                
-                try:
-                    data = scrape_player_details(p_id, club['name'])
-                    
-                    save_player_and_market_history(data, saison_name)
-                    
-                    # PRINT BEHOBEN (mw existierte nicht mehr)
-                    print(f"  -> Gespeichert: {data['full_name_tm']} (ID: {p_id}) | Datenpunkte für {saison_name} erfasst")
-                    
-                    time.sleep(2) 
-                    
-                except Exception as e:
-                    print(f"  Fehler bei Spieler {p_id}: {e}")
-                    time.sleep(10) 
-
-if __name__ == "__main__":
-    main()
-            history = []
-            for entry in entries:
-                raw_date = entry.get("datum_mw")
-                if raw_date and "." in raw_date:
-                    parts = raw_date.split(".")
-                    if len(parts) == 3:
-                        formatted_date = f"{parts[2]}-{parts[1]}-{parts[0]}"
-                        history.append({"value": entry.get("y"), "date": formatted_date})
-            return history
-    except Exception:
-        pass
-    return []
-
-def get_bundesliga_clubs():
-    """Schritt 1: Sammelt die 18 aktuellen Bundesliga-Vereine."""
-    print("Rufe Bundesliga-Clubs ab...")
-    url = f"{BASE_URL}/bundesliga/startseite/wettbewerb/L1"
-    soup = get_soup(url)
-    
-    clubs = []
-    # Sucht die Links zu den Vereinen in der Ligatabelle
-    table = soup.select_one("#yw1 table.items tbody")
-    if not table:
-        return clubs
-        
-    for row in table.select("tr"):
-        link_tag = row.select_one("td.hauptlink a")
-        if link_tag:
-            club_name = link_tag.get("title", link_tag.get_text(strip=True))
-            club_url = link_tag.get("href")
-            clubs.append({"name": club_name, "url": club_url})
-            
-    # Duplikate filtern, da Transfermarkt Links manchmal doppelt hat
-    seen = set()
-    unique_clubs = []
-    for c in clubs:
-        if c["name"] not in seen:
-            seen.add(c["name"])
-            unique_clubs.append(c)
-            
-    print(f"{len(unique_clubs)} Vereine gefunden.")
-    return unique_clubs
-
-def get_players_from_club(club_url):
-    """Schritt 2: Sammelt alle Spieler-IDs aus dem aktuellen Kader des Vereins."""
-    full_url = f"{BASE_URL}{club_url}"
-    soup = get_soup(full_url)
-    
-    player_ids = set()
-    for link in soup.select("table.items td.hauptlink a"):
-        href = link.get("href", "")
-        if "/profil/spieler/" in href:
-            # ID aus der URL extrahieren (die Zahlen am Ende)
-            match = re.search(r'/spieler/(\d+)', href)
-            if match:
-                player_ids.add(int(match.group(1)))
-                
-    return list(player_ids)
-
-def scrape_player_details(player_id, club_name):
-    profile_url = f"{BASE_URL}/-/profil/spieler/{player_id}"
-    profile_soup = get_soup(profile_url)
-
-    name_tag = profile_soup.find("h1")
-    raw_name = name_tag.get_text(" ", strip=True) if name_tag else f"Unknown {player_id}"
-
-    shirt_number = None
-    number_match = re.match(r"^#(\d+)\s+", raw_name)
-    if number_match:
-        shirt_number = int(number_match.group(1))
-
-    full_name_tm = re.sub(r"^#\d+\s+", "", raw_name).strip()
-
-    date_of_birth = None
-    dob_tag = profile_soup.find(attrs={"itemprop": "birthDate"})
-    if dob_tag:
-        date_text = dob_tag.get_text(strip=True).split('(')[0].strip()
-        parts = date_text.split('.')
-        if len(parts) == 3:
-            date_of_birth = f"{parts[2]}-{parts[1]}-{parts[0]}"
-            
-    history = fetch_all_market_values(player_id)
-
-    return {
-        "tm_id": player_id,
-        "club_name": club_name,
-        "shirt_number": shirt_number,
-        "full_name_tm": full_name_tm,
-        "date_of_birth": date_of_birth,
-        "history": history
-    }
-
-def save_player_and_market_history(data, saison_name):
-    conn = get_connection()
-    cursor = conn.cursor()
-    
-    # 1. Spieler-Stammdaten speichern
-    name_parts = data['full_name_tm'].split(' ', 1)
-    vorname = name_parts[0]
-    nachname = name_parts[1] if len(name_parts) > 1 else ""
-    
-    cursor.execute("""
-        INSERT INTO bl_players (tm_id, vorname, nachname, saison, club_name, shirt_number)
-        VALUES (%s, %s, %s, %s, %s, %s)
-        ON DUPLICATE KEY UPDATE vorname=VALUES(vorname), nachname=VALUES(nachname)
-    """, (data['tm_id'], vorname, nachname, saison_name, data['club_name'], data['shirt_number']))
-
-    # 2. ALLE historischen Marktwert-Punkte einzeln speichern
-    for entry in data['history']:
+    for entry in history:
         cursor.execute("""
-            INSERT INTO bl_market_values (tm_id, saison, market_value_eur, updated_at)
+            INSERT INTO bl_market_values (tm_id, market_value_eur, last_updated, saison)
             VALUES (%s, %s, %s, %s)
-            ON DUPLICATE KEY UPDATE market_value_eur=VALUES(market_value_eur)
-        """, (data['tm_id'], saison_name, entry['value'], entry['date']))
-    
+            ON DUPLICATE KEY UPDATE 
+                market_value_eur=VALUES(market_value_eur),
+                saison=VALUES(saison)
+        """, (player_id, entry['value'], entry['date'], entry['saison']))
     conn.commit()
     cursor.close()
     conn.close()
 
-def check_already_scraped(club_name, saison_name):
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT COUNT(*) FROM bl_players WHERE club_name = %s AND saison = %s", (club_name, saison_name))
-    count = cursor.fetchone()[0]
-    cursor.close()
-    conn.close()
-    return count > 0
-
 def main():
-    clubs = get_bundesliga_clubs()
+    print("Starte Marktwert-Scraper (Alle Spieler seit 2004)...")
+    
+    setup_database_automatically()
+    
+    club_urls = get_bundesliga_clubs()
+    processed_players = set()
     
     for saison_name, saison_id in SAISONS.items():
-        print(f"\n=== STARTE SAISON {saison_name} ===")
-        
-        for club in clubs:
-            # 1. Prüfen, ob wir diesen Verein für diese Saison schon haben
-            if check_already_scraped(club['name'], saison_name):
-                print(f"  {club['name']} für {saison_name} bereits vorhanden. Überspringe...")
-                continue
-            
-            print(f"--- Scrape Kader von: {club['name']} ---")
-            
-            # URL bauen (ähnlich wie in deinem bewährten Skript)
-            # Hinweis: Stelle sicher, dass squad_url korrekt die SaisonID enthält
-            squad_url = f"{BASE_URL}{club['url'].replace('/startseite/verein/', '/kader/verein/')}/saison_id/{saison_id}"
-            
+        print(f"\n=== SUCHE SPIELER IN SAISON {saison_name} ===")
+        for club_url in club_urls:
+            squad_url = f"{BASE_URL}{club_url.replace('/startseite/verein/', '/kader/verein/')}/saison_id/{saison_id}"
             squad_soup = get_soup(squad_url)
             table = squad_soup.find("table", class_="items")
             if not table:
                 continue
-
-            # Jede Zeile der Tabelle einzeln durchgehen
+                
             for row in table.find_all("tr", class_=["odd", "even"]):
                 link = row.find("a", href=re.compile(r"/profil/spieler/"))
                 if not link:
                     continue
-                
                 p_id = re.search(r"spieler/(\d+)", link['href']).group(1)
                 
+                if p_id in processed_players:
+                    continue
+                    
+                history = fetch_all_market_values(p_id)
                 try:
-                    # JETZT WARTEN: Das Skript macht hier erst weiter, wenn get_player_details fertig ist
-                    data = scrape_player_details(p_id, club['name'])
-                    
-                    save_player_and_market_history(data, saison_name)
-                    
-                    print(f"  -> Gespeichert: {data['full_name_tm']} (ID: {p_id}) | MW: {mw}")
-                    
-                    # Kurze Pause pro Spieler, um Transfermarkt nicht zu fluten
-                    time.sleep(2) 
-                    
+                    save_market_values(p_id, history)
+                    processed_players.add(p_id)
+                    print(f"  -> Spieler ID {p_id} | {len(history)} Marktwerte (inkl. Saison) perfekt gespeichert")
+                    time.sleep(1) # Etwas schneller gemacht
                 except Exception as e:
-                    print(f"  Fehler bei Spieler {p_id}: {e}")
-                    time.sleep(10) 
+                    print(f"  Fehler beim Speichern von Spieler {p_id}: {e}")
+                    time.sleep(5)
 
 if __name__ == "__main__":
     main()
